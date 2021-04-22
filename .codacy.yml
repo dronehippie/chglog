@@ -1,0 +1,10 @@
+---
+exclude_paths:
+  - .github/**
+  - .bingo/**
+  - .chglog/**
+  - docs/**
+
+  - CHANGELOG.md
+
+...

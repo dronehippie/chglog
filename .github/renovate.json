@@ -1,0 +1,33 @@
+{
+    "extends": [
+        "config:base",
+        ":dependencyDashboard",
+        ":semanticCommits",
+        ":semanticCommitScope(deps)",
+        ":automergeMinor",
+        ":automergeDigest"
+    ],
+    "enabledManagers": [
+        "dockerfile",
+        "gomod"
+    ],
+    "dockerfile": {
+        "pinDigests": true
+    },
+    "gomod": {
+        "postUpdateOptions": [
+            "gomodTidy"
+        ]
+    },
+    "regexManagers": [{
+        "fileMatch": [
+            "Dockerfile"
+        ],
+        "matchStrings": [
+            "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=\"\\${.*:-(?<currentValue>.*)}\"\\s"
+        ]
+    }],
+    "labels": [
+        "renovate"
+    ]
+}

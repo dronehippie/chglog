@@ -1,0 +1,39 @@
+style: github
+template: CHANGELOG.tpl.md
+
+info:
+  title: CHANGELOG
+  repository_url: https://github.com/dronehippie/chglog
+
+options:
+  commits:
+    filters:
+      Type:
+        - feat
+        - fix
+        - perf
+        - refactor
+        - docs
+        - ci
+        - chore
+
+  commit_groups:
+    title_maps:
+      feat: Features
+      fix: Bugfixes
+      perf: Performance
+      refactor: Refactoring
+      docs: Documentation
+      ci: Pipeline
+      chore: Others
+
+  header:
+    pattern: "^(\\w*)(?:\\(([\\w\\$\\.\\-\\*\\s]*)\\))?\\:\\s(.*)$"
+    pattern_maps:
+      - Type
+      - Scope
+      - Subject
+
+  notes:
+    keywords:
+      - BREAKING CHANGE

@@ -1,0 +1,6 @@
+title: chglog
+description: Drone plugin provided by Webhippie
+baseurl: /chglog
+
+email: mail@webhippie.de
+theme: jekyll-theme-cayman
